@@ -12,8 +12,6 @@ defmodule ScoreKeeper.Application do
       ScoreKeeper.Repo,
       {DNSCluster, query: Application.get_env(:score_keeper, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: ScoreKeeper.PubSub},
-      # Start the Finch HTTP client for sending emails
-      {Finch, name: ScoreKeeper.Finch},
       # Start a worker by calling: ScoreKeeper.Worker.start_link(arg)
       # {ScoreKeeper.Worker, arg},
       # Start to serve requests, typically the last entry

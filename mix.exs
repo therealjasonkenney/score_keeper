@@ -32,16 +32,24 @@ defmodule ScoreKeeper.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      # Phoenix Framework
       {:phoenix, "~> 1.7.14"},
       {:phoenix_ecto, "~> 4.5"},
       {:ecto_sql, "~> 3.10"},
-      {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 4.1"},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
-      # TODO bump on release to {:phoenix_live_view, "~> 1.0.0"},
       {:phoenix_live_view, "~> 1.0.0-rc.1", override: true},
-      {:floki, ">= 0.30.0", only: :test},
-      {:phoenix_live_dashboard, "~> 0.8.3"},
+      # HTTP Server
+      {:bandit, "~> 1.5"},
+      # Clustering
+      {:dns_cluster, "~> 0.1.1"},
+      # Database
+      {:postgrex, ">= 0.0.0"},
+      # i18n
+      {:gettext, "~> 0.20"},
+      # JSON
+      {:jason, "~> 1.2"},
+
+      # Tailwind CSS/JS
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
       {:tailwind, "~> 0.2", runtime: Mix.env() == :dev},
       {:heroicons,
@@ -51,15 +59,23 @@ defmodule ScoreKeeper.MixProject do
        app: false,
        compile: false,
        depth: 1},
-      {:swoosh, "~> 1.5"},
-      {:finch, "~> 0.13"},
+
+      # Telemetry
+      {:phoenix_live_dashboard, "~> 0.8.3"},
       {:telemetry_metrics, "~> 1.0"},
       {:telemetry_poller, "~> 1.0"},
-      {:gettext, "~> 0.20"},
-      {:jason, "~> 1.2"},
-      {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.5"},
-      {:ex_doc, "~> 0.34", only: :dev, runtime: false}
+
+      # Reload Phoenix when files change.
+      {:phoenix_live_reload, "~> 1.2", only: :dev},
+
+      # CI related #####
+
+      # Documentation
+      {:ex_doc, "~> 0.34", only: :dev, runtime: false},
+      # Search html by css selector, used in tests.
+      {:floki, ">= 0.30.0", only: :test},
+      # provides mix deps.audit
+      {:mix_audit, "~> 2.1", only: [:dev, :test], runtime: false}
     ]
   end
 

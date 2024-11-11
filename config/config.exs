@@ -20,16 +20,9 @@ config :score_keeper, ScoreKeeperWeb.Endpoint,
     layout: false
   ],
   pubsub_server: ScoreKeeper.PubSub,
+  # A salt is not a secret, it just ensures each use-case of secret key
+  # base has a unique salt.
   live_view: [signing_salt: "Pvc/39dO"]
-
-# Configures the mailer
-#
-# By default it uses the "Local" adapter which stores the emails
-# locally. You can see the emails in your browser, at "/dev/mailbox".
-#
-# For production it's recommended to configure a different adapter
-# at the `config/runtime.exs`.
-config :score_keeper, ScoreKeeper.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
