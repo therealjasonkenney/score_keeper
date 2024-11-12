@@ -20,12 +20,6 @@ config :score_keeper, ScoreKeeperWeb.Endpoint,
   secret_key_base: "BUOrPga1py9c+Bur9gDLgqFNqutdf9GkNVOzAax2NbaA+Ohg6l10wMJt6i7nriMp",
   server: false
 
-# In test we don't send emails
-config :score_keeper, ScoreKeeper.Mailer, adapter: Swoosh.Adapters.Test
-
-# Disable swoosh api client as it is only required for production adapters
-config :swoosh, :api_client, false
-
 # Print only warnings and errors during test
 config :logger, level: :warning
 

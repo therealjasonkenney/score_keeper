@@ -43,7 +43,8 @@ defmodule ScoreKeeperWeb do
         layouts: [html: ScoreKeeperWeb.Layouts]
 
       import Plug.Conn
-      import ScoreKeeperWeb.Gettext
+
+      use Gettext, backend: ScoreKeeperWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -85,7 +86,7 @@ defmodule ScoreKeeperWeb do
       import Phoenix.HTML
       # Core UI components and translation
       import ScoreKeeperWeb.CoreComponents
-      import ScoreKeeperWeb.Gettext
+      use Gettext, backend: ScoreKeeperWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS

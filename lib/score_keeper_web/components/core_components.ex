@@ -17,7 +17,7 @@ defmodule ScoreKeeperWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import ScoreKeeperWeb.Gettext
+  use Gettext, backend: ScoreKeeperWeb.Gettext
 
   @doc """
   Renders a modal.
