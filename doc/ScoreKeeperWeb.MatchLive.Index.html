@@ -8,13 +8,13 @@
     <meta name="project" content="score_keeper v0.1.0">
 
 
-    <title>ScoreKeeper.Mailer — score_keeper v0.1.0</title>
+    <title>ScoreKeeperWeb.MatchLive.Index — score_keeper v0.1.0</title>
     <link rel="stylesheet" href="dist/html-elixir-F2VRIOKR.css" />
 
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-K7URE6B4.js"></script>
-    <script src="dist/sidebar_items-FF114E65.js"></script>
+    <script src="dist/sidebar_items-53C62C74.js"></script>
     <script src="docs_config.js"></script>
     <script async src="dist/html-YIPIRHGU.js"></script>
 
@@ -112,7 +112,7 @@ Pages
 <div id="top-content">
   <h1>
 
-    <span translate="no">ScoreKeeper.Mailer</span> 
+    <span translate="no">ScoreKeeperWeb.MatchLive.Index</span> 
     <small class="app-vsn" translate="no">(score_keeper v0.1.0)</small>
 
   </h1>
@@ -134,31 +134,11 @@ Pages
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#deliver/2" data-no-tooltip translate="no">deliver(email, config \\ [])</a>
+        <a href="#render/1" data-no-tooltip translate="no">render(assigns)</a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Delivers an email.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#deliver!/2" data-no-tooltip translate="no">deliver!(email, config \\ [])</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Delivers an email, raises on error.</p></div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#deliver_many/2" data-no-tooltip translate="no">deliver_many(emails, config \\ [])</a>
-
-      </div>
-
-        <div class="summary-synopsis"><p>Delivers a list of emails.</p></div>
+        <div class="summary-synopsis"><p>Callback implementation for <a href="https://hexdocs.pm/phoenix_live_view/1.0.0-rc.7/Phoenix.LiveView.html#c:render/1"><code class="inline">Phoenix.LiveView.render/1</code></a>.</p></div>
 
     </div>
 
@@ -175,100 +155,21 @@ Pages
       <span class="text">Functions</span>
     </h1>
     <div class="functions-list">
-<section class="detail" id="deliver/2">
-
-    <span id="deliver/1"></span>
+<section class="detail" id="render/1">
 
   <div class="detail-header">
-    <a href="#deliver/2" class="detail-link" data-no-tooltip title="Link to this function">
+    <a href="#render/1" class="detail-link" data-no-tooltip title="Link to this function">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this function</span>
     </a>
-    <h1 class="signature" translate="no">deliver(email, config \\ [])</h1>
+    <h1 class="signature" translate="no">render(assigns)</h1>
 
 
   </div>
 
   <section class="docstring">
 
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> deliver(<a href="https://hexdocs.pm/swoosh/1.17.3/Swoosh.Email.html#t:t/0">Swoosh.Email.t</a>(), <a href="https://hexdocs.pm/elixir/Keyword.html#t:t/0">Keyword.t</a>()) :: {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}</pre>
-
-      </div>
-
-<p>Delivers an email.</p><p>If the email is delivered it returns an <code class="inline">{:ok, result}</code> tuple. If it fails,
-returns an <code class="inline">{:error, error}</code> tuple.</p>
-  </section>
-</section>
-<section class="detail" id="deliver!/2">
-
-    <span id="deliver!/1"></span>
-
-  <div class="detail-header">
-    <a href="#deliver!/2" class="detail-link" data-no-tooltip title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">deliver!(email, config \\ [])</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> deliver!(<a href="https://hexdocs.pm/swoosh/1.17.3/Swoosh.Email.html#t:t/0">Swoosh.Email.t</a>(), <a href="https://hexdocs.pm/elixir/Keyword.html#t:t/0">Keyword.t</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">no_return</a>()</pre>
-
-      </div>
-
-<p>Delivers an email, raises on error.</p><p>If the email is delivered, it returns the result. If it fails, it raises
-a <code class="inline">DeliveryError</code>.</p>
-  </section>
-</section>
-<section class="detail" id="deliver_many/2">
-
-    <span id="deliver_many/1"></span>
-
-  <div class="detail-header">
-    <a href="#deliver_many/2" class="detail-link" data-no-tooltip title="Link to this function">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this function</span>
-    </a>
-    <h1 class="signature" translate="no">deliver_many(emails, config \\ [])</h1>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@spec</span> deliver_many(
-  [
-    %Swoosh.Email{
-      assigns: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-      attachments: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-      bcc: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-      cc: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-      from: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-      headers: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-      html_body: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-      private: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-      provider_options: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-      reply_to: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-      subject: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-      text_body: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(),
-      to: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()
-    }
-  ],
-  <a href="https://hexdocs.pm/elixir/Keyword.html#t:t/0">Keyword.t</a>()
-) :: {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}</pre>
-
-      </div>
-
-<p>Delivers a list of emails.</p><p>It accepts a list of <code class="inline">%Swoosh.Email{}</code> as its first parameter.</p>
+<p>Callback implementation for <a href="https://hexdocs.pm/phoenix_live_view/1.0.0-rc.7/Phoenix.LiveView.html#c:render/1"><code class="inline">Phoenix.LiveView.render/1</code></a>.</p>
   </section>
 </section>
 

@@ -18,6 +18,14 @@ defmodule ScoreKeeperWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    # May want to put this behind some form of auth.
+    live "/matches", MatchLive.Index, :index
+    live "/matches/new", MatchLive.Index, :new
+    live "/matches/:id/edit", MatchLive.Index, :edit
+
+    live "/matches/:id", MatchLive.Show, :show
+    live "/matches/:id/show/edit", MatchLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.
