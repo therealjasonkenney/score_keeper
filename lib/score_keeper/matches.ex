@@ -3,10 +3,10 @@ defmodule ScoreKeeper.Matches do
   The Matches context.
   """
 
-  import Ecto.Query, warn: false
   alias ScoreKeeper.Repo
 
   alias ScoreKeeper.Matches.Match
+  import ScoreKeeper.Matches.MatchQuery, only: [all_matches: 0]
 
   @doc """
   Returns the list of matches.
@@ -17,8 +17,10 @@ defmodule ScoreKeeper.Matches do
       [%Match{}, ...]
 
   """
+  @spec list_matches() :: list(Match.t())
   def list_matches do
-    Repo.all(Match)
+    all_matches()
+    |> Repo.all()
   end
 
   @doc """

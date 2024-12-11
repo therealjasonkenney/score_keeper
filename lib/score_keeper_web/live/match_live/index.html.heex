@@ -44,3 +44,20 @@
     patch={~p"/matches"}
   />
 </.modal>
+
+<.modal
+  :if={@live_action in [:new_score, :edit_score]}
+  id="score-modal"
+  show
+  on_cancel={JS.patch(~p"/matches")}
+>
+  <.live_component
+    module={ScoreKeeperWeb.MatchLive.ScoreFormComponent}
+    id={@score.id || :new}
+    match_id={@match.id}
+    title={@page_title}
+    action={@live_action}
+    score={@score}
+    patch={~p"/matches"}
+  />
+</.modal>
